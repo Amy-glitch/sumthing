@@ -1,0 +1,54 @@
+body
+{
+font-size: 50px;    
+height: 100%;
+
+background-color: rgb(20,0,20);
+}
+
+
+.t { 
+    overflow-y:hidden;
+    height:1600px;
+    background-color: rgb(20,0,20);
+    color: aquamarine;
+    font-family: 'Courier New', monospace;
+}
+
+.inp {
+height: 100px;
+width: 80%;
+background-color: rgb(20,0,20);
+font-size: 50px;
+border:none;
+color: cadetblue;
+
+
+}
+
+*:focus {
+    outline: none;
+}
+
+.btn{
+    height: 100px;
+    width: 18%;
+    font-size: 50px;
+    background-color: black;
+    border: none;
+    color: cadetblue;
+  
+}
+
+
+
+
+
+.btm
+{
+ 
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
