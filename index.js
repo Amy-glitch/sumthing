@@ -2,6 +2,7 @@ let text = document.getElementById('t');
 let inp = document.getElementById('inp');
 let cons ='type h for help';
 let curview;
+let lost=false;
 
 
 let settlement = new Settlement();
@@ -28,7 +29,8 @@ curview='';
           break;
 
           case 'map':
-            cons += settlement.showMap();
+            cons += settlement.showMap() +'<br>'+ settlement.showRes();
+            curview = 'res';
           break;
 
         default:
@@ -37,7 +39,8 @@ curview='';
 
 if (inp.value.substring(0,5) == 'build'){
   let msg = settlement.build(inp.value);
-  cons +=  settlement.showMap();
+  cons += settlement.showMap() +'<br>'+ settlement.showRes();
+  curview='res';
   cons += '<br>' + msg;
 }
 
@@ -55,14 +58,14 @@ if (inp.value.substring(0,5) == 'build'){
 
 function loop()
 {
-console.log('k');
+
 //if (commlist ==true){}
 settlement.updateTick();
 
 
 switch(curview) 
 {
-    case 'res': cons =''; cons += settlement.showRes(); text.innerHTML =cons;
+    case 'res': cons =''; cons += settlement.showMap() +'<br>'+ settlement.showRes(); text.innerHTML =cons;
     break;
 }
 
